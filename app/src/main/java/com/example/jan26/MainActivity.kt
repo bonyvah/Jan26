@@ -123,7 +123,6 @@ fun ProfileCard(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // ✅ LazyColumn for logs
         LazyColumn(
             modifier = Modifier
                 .weight(1f, fill = true)
