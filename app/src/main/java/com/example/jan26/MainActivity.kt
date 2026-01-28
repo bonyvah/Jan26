@@ -12,10 +12,15 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Share
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -114,6 +119,10 @@ fun ProfileCard(
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        CounterSection(modifier = Modifier.fillMaxWidth())
+
+        Spacer(modifier = Modifier.height(16.dp))
+
         // ✅ LazyColumn for logs
         LazyColumn(
             modifier = Modifier
@@ -172,5 +181,23 @@ fun ProfileCardPreview() {
             modifier = Modifier.padding(16.dp),
             logs = listOf("onCreate", "onStart", "onResume")
         )
+    }
+}
+
+@Composable
+fun CounterSection(modifier: Modifier = Modifier) {
+    var count by remember { mutableIntStateOf(0) }
+
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(text = "Count: $count", fontSize = 18.sp, color = ColorPrimary)
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(onClick = { count++ }) {
+            Text("Increment")
+        }
     }
 }
