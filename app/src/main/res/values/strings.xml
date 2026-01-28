@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Jan26</string>
+    <string name="from_xyz">From xyz</string>
+    <string name="happy_birthday">Happy birthday</string>
+    <string name="full_name">Bekbolsun Ysmanov</string>
+    <string name="title">Android Developer</string>
+    <string name="phone">+996 502 36 89 83</string>
+    <string name="social">/@bonyvah</string>
+    <string name="email">bekbolsun@tutamail.com</string>
+
+</resources>
